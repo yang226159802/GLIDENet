@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://multiphase-data-hub.org/schemas/dataset_info.schema.json",
+  "title": "GLIDENet dataset metadata",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "version", "status", "description", "domain", "data", "license", "citation"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_\\-]*$"
+    },
+    "title": { "type": "string" },
+    "version": { "type": "string" },
+    "status": { "type": "string" },
+    "description": { "type": "string" },
+    "domain": {
+      "type": "object",
+      "required": ["field", "flow_type", "configuration", "phases", "interface_method", "spatial_dimension"],
+      "properties": {
+        "field": { "type": "string" },
+        "flow_type": { "type": "string" },
+        "configuration": { "type": "string" },
+        "phases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "interface_method": { "type": "string" },
+        "solver_or_source": { "type": "string" },
+        "boundary_conditions": { "type": "string" },
+        "spatial_dimension": { "type": "integer", "minimum": 1, "maximum": 3 }
+      }
+    },
+    "ai_tasks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "data": {
+      "type": "object",
+      "required": ["public_access_url", "format"],
+      "properties": {
+        "public_access_url": { "type": "string" },
+        "doi": { "type": "string" },
+        "format": { "type": "string" },
+        "num_samples": { "type": "integer", "minimum": 0 },
+        "arrays": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "license": { "type": "object" },
+    "citation": { "type": "object" },
+    "provenance": { "type": "object" }
+  }
+}

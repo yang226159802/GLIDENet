@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-page: #f7f7f7;
+  --color-text: #222222;
+  --color-muted: #666666;
+  --color-subtle: #8a8a8a;
+  --color-line: #dddddd;
+  --color-soft: #f1f3f5;
+  --color-panel: #ffffff;
+  --color-link: #2f6fbb;
+  --color-link-dark: #235587;
+  --color-accent: #b13a2e;
+  --color-dark: #222222;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: Consolas, "Liberation Mono", Menlo, monospace;
+  --container: 1120px;
+  --radius: 6px;
+  --nav-height: 58px;
+}

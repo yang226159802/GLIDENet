@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datasets | GLIDENet</title>
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body data-page="datasets">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">GLIDENet</a>
+        <div class="nav-links">
+          <a href="index.html" data-page="home">Home</a>
+          <a href="datasets.html" data-page="datasets">Datasets</a>
+          <a href="benchmarks.html" data-page="benchmarks">Benchmarks</a>
+          <a href="tutorials.html" data-page="tutorials">Tutorials</a>
+          <a href="contribute.html" data-page="contribute">Contribute</a>
+          <a href="events.html" data-page="events">Events</a>
+          <a href="cite.html" data-page="cite">Cite</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="page-intro">
+        <div class="container">
+          <h1>Datasets</h1>
+          <p>Browse public gas-liquid two-phase CFD and ML datasets indexed by GLIDENet. Data files are hosted externally; this site maintains metadata, access links, documentation, preview figures, and review status.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="filter-panel">
+          <h2>Filter Datasets</h2>
+          <div class="filter-groups">
+            <div class="filter-group">
+              <h3>Show All</h3>
+              <span class="filter-option">All GLIDENet datasets</span>
+            </div>
+            <div class="filter-group">
+              <h3>Flow Type</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+            <div class="filter-group">
+              <h3>Data Type</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+            <div class="filter-group">
+              <h3>Dimension</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+            <div class="filter-group">
+              <h3>Flow Configuration</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+            <div class="filter-group">
+              <h3>Benchmark Datasets</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+            <div class="filter-group">
+              <h3>Hosting Platform</h3>
+              <span class="filter-option">Categories pending</span>
+            </div>
+          </div>
+        </div>
+
+        <label>
+          Search datasets
+          <input id="dataset-search" type="search" placeholder="droplet, VOF, DNS, ModelScope" />
+        </label>
+        <h2>GLIDENet Datasets</h2>
+        <div class="dataset-gallery" id="dataset-grid"></div>
+        <p>Unless otherwise specified on each dataset page, dataset reuse follows the license declared by the original data provider. Always cite the dataset page and related publication when available.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>GLIDENet: Gas-Liquid Interfacial Dynamics Ensemble Network</span>
+        <span><a href="https://github.com/yang226159802/GLIDENet">GitHub</a> | <a href="mailto:226159802@qq.com">Contact</a></span>
+      </div>
+    </footer>
+    <script src="js/filters.js"></script>
+    <script src="js/datasets-data.js"></script>
+    <script src="js/datasets-ui.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+name: Dataset submission
+description: Propose a dataset record for GLIDENet
+labels:
+  - dataset-submission
+  - automated-precheck
+  - needs-human-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a dataset for GLIDENet. Please host the large data files on ModelScope, Kaggle, Zenodo, or institutional storage first. This GitHub issue is for submitting the catalogue record, preview information, and access links.
+
+        After submission, an automated precheck labels the issue and notifies maintainers. A maintainer still performs the final review before the dataset appears in the catalogue.
+
+  - type: dropdown
+    id: requested_track
+    attributes:
+      label: Requested review track
+      description: What kind of submission is this? (New dataset, Mirror dataset or Modify dataset).
+      options:
+        - New dataset
+        - Mirror dataset
+        - Modify dataset
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Dataset title
+      description: Use a concise case name suitable for the website dataset page.
+      placeholder: Droplet breakup in HIT
+    validations:
+      required: true
+
+  - type: input
+    id: subtitle
+    attributes:
+      label: Subtitle
+      description: Optional short subtitle shown under the title.
+      placeholder: DNS of droplet breakup in homogeneous isotropic turbulence
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide one clear paragraph describing the physical case, method/source, key parameters, and released fields.
+      placeholder: This dataset contains direct numerical simulation data of ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Dataset status
+      description: Final catalogue status for this dataset.
+      options:
+        - Community dataset
+        - Seed dataset
+        - Benchmark dataset
+    validations:
+      required: true
+
+  - type: textarea
+    id: keywords
+    attributes:
+      label: Keywords
+      description: Comma-separated keywords shown as tags on the dataset card.
+      placeholder: interface dynamics, flow-field learning, VOF, droplet breakup, homogeneous isotropic turbulence, DNS analysis
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hosting_platform
+    attributes:
+      label: Hosting platform
+      description: Where are the actual data files hosted?
+      options:
+        - ModelScope
+        - Kaggle
+        - Zenodo
+        - Institutional repository
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: access_link
+    attributes:
+      label: Dataset link
+      description: Link to the dataset landing page or download page. If there are multiple cases, separate each link with a semicolon (;).
+      placeholder: https://modelscope.cn/datasets/owner/dataset-name ; https://...
+    validations:
+      required: true
+
+  - type: input
+    id: metadata_link
+    attributes:
+      label: info.json link
+      description: Link to the hosted info.json / multiphase_info.json. If there are multiple cases, separate each link with a semicolon (;).
+      placeholder: https://.../info.json ; https://.../info.json
+    validations:
+      required: true
+
+  - type: textarea
+    id: physics
+    attributes:
+      label: Physics and numerical method
+      description: Describe the flow configuration, solver/source, interface method, boundary conditions, and key physical parameters.
+      placeholder: |
+        Flow configuration:
+        Solver or data source:
+        Interface method:
+        Boundary conditions:
+        Key parameters:
+    validations:
+      required: false
+
+  - type: textarea
+    id: variables
+    attributes:
+      label: Variables
+      description: List variables, roles, units, shapes, dtype, and phase/interface convention.
+      placeholder: |
+        - Gvol: phase indicator / volume fraction, alpha=1 liquid and alpha=0 gas, shape 256 x 256 x 256
+        - V: velocity vector field, shape 3 x 256 x 256 x 256
+        - P: pressure field, shape 256 x 256 x 256
+    validations:
+      required: false
+
+  - type: input
+    id: grid
+    attributes:
+      label: Grid dimensions
+      description: Full grid dimensions with Nx, Ny, Nz. If there are multiple cases, separate each with a semicolon (;).
+      placeholder: Nx=256, Ny=256, Nz=256 ; Nx=512, Ny=512, Nz=512
+    validations:
+      required: true
+
+  - type: input
+    id: field_location
+    attributes:
+      label: Field location
+      description: Where fields are defined on the grid (for example cell-centered, node-centered, staggered).
+      placeholder: cell-centered
+    validations:
+      required: true
+
+  - type: input
+    id: samples
+    attributes:
+      label: Number of samples / snapshots
+      description: Total number of samples or snapshots released in this dataset.
+      placeholder: "81"
+    validations:
+      required: false
+
+  - type: input
+    id: format
+    attributes:
+      label: Data format
+      description: Short format label shown on the dataset card (for example .h5, .npz, custom binary, etc).
+      placeholder: custom binary
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_format
+    attributes:
+      label: File format and loading instructions
+      description: Describe the file organization and how an external user can load one sample or snapshot.
+      placeholder: |
+        File format: custom binary
+        Directory structure: dataset/data, dataset/info.json, dataset/README.md, dataset/load_example.py
+        Loading script: load_example.py
+        Notes for custom binary files: header bytes, dtype, payload shape, vector component order, reshape order.
+    validations:
+      required: true
+
+  - type: input
+    id: size
+    attributes:
+      label: Dataset size
+      description: Use the size reported by the hosting platform if available.
+      placeholder: 27.18 GB
+    validations:
+      required: false
+
+  - type: input
+    id: case_count
+    attributes:
+      label: Number of cases
+      description: How many distinct cases (operating conditions) does this dataset contain? Enter 1 for a single case.
+      placeholder: "1"
+    validations:
+      required: true
+
+  - type: input
+    id: case_condition
+    attributes:
+      label: Case conditions
+      description: What differs between cases (for example We = 15, 30). Leave empty for a single case.
+      placeholder: We = 15; We = 30
+    validations:
+      required: false
+
+  - type: input
+    id: contributors
+    attributes:
+      label: Contributors
+      description: List contributor names in display order.
+      placeholder: Changxiao Shao, Kun Luo, Yue Yang, Jianren Fan
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact
+      description: Email or GitHub handle for follow-up questions.
+      placeholder: name@example.edu
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI or preferred citation
+      description: Provide a dataset DOI, related paper DOI, or preferred citation.
+      placeholder: 10.1016/j.ijmultiphaseflow.2018.06.009
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: State the data license clearly.
+      placeholder: CC-BY-4.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: preview
+    attributes:
+      label: Preview image
+      description: Attach or link exactly one representative image shown on the main page.
+      placeholder: Drag and drop one image here, or paste an image URL.
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail_images
+    attributes:
+      label: Detail page images
+      description: Optional additional images for the dataset detail page.
+      placeholder: Drag and drop images here, or paste image URLs (one per line).
+    validations:
+      required: false
+
+  - type: textarea
+    id: automation_notes
+    attributes:
+      label: Automated precheck notes
+      description: List anything the automated reviewer should know, such as temporary access restrictions, large-file mirrors, or a sample file path.
+      placeholder: |
+        Sample file for load test:
+        Checksums file:
+        Access restriction, if any:
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: The data files are hosted outside the website repository.
+          required: true
+        - label: The hosted dataset includes README.md and info.json.
+          required: true
+        - label: Variables, grid, file format, license, and citation are documented.
+          required: true
+        - label: A representative preview image is attached or linked.
+          required: true
+        - label: I understand that automated checks are preliminary and that maintainers make the final inclusion decision.
+          required: true

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Droplet breakup in HIT | GLIDENet</title>
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body data-page="datasets">
+    <header class="site-header">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="index.html">GLIDENet</a>
+    <div class="nav-links">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="datasets.html" data-page="datasets">Datasets</a>
+      <a href="benchmarks.html" data-page="benchmarks">Benchmarks</a>
+      <a href="tutorials.html" data-page="tutorials">Tutorials</a>
+      <a href="contribute.html" data-page="contribute">Contribute</a>
+      <a href="events.html" data-page="events">Events</a>
+      <a href="cite.html" data-page="cite">Cite</a>
+    </div>
+  </nav>
+</header>
+
+    <main class="site-main">
+      <section class="page-intro">
+        <div class="container">
+          <h1>Droplet breakup in HIT</h1>
+          <p>Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15</p>
+        </div>
+      </section>
+
+      <section class="section two-column">
+        <div>
+          <div class="detail-gallery"><img src="assets/droplet-breakup-in-hit-20260911-013152/detail-1.png" alt="Droplet breakup in HIT" /></div>
+          <h2>Description</h2>
+          <p>Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15. The dataset provides volume-fraction, pressure, and velocity fields over 81 snapshots.</p>
+        </div>
+        <aside class="side-card">
+          <h2>Dataset Access</h2>
+          <p><a class="button" href="https://modelscope.cn/datasets/yangqianqi/dns-droplet-breakup-hit-we15">Open on ModelScope</a></p>
+          <h3>Quick Info</h3>
+          <ul class="quick-info-list">
+            <li>Status: Seed dataset</li>
+<li><a href="https://modelscope.cn/datasets/yangqianqi/dns-droplet-breakup-hit-we15">Dataset link</a></li>
+<li><a href="https://modelscope.cn/datasets/yangqianqi/dns-droplet-breakup-hit-we15/file/view/master/info.json">info.json</a></li>
+<li><a href="https://doi.org/10.1016/j.ijmultiphaseflow.2018.06.009">DOI</a></li>
+<li>Contributors: Changxiao Shao, Kun Luo, Yue Yang, Jianren Fan</li>
+<li>Contact: shaochangxiao@hit.edu.cn</li>
+<li>License: CC-BY-4.0</li>
+<li>Grid: Nx=256, Ny=256, Nz=256</li>
+<li>Field location: cell-centered</li>
+<li>Samples / snapshots: 81</li>
+<li>Format: custom binary</li>
+<li>Size: 27.18 GB</li>
+<li>Loading instructions: File format: custom binary
+Directory structure: dataset/data, dataset/info.json, dataset/README.md, dataset/load_example.py
+Loading script: load_example.py
+Notes for custom binary files:
+      &quot;header_bytes&quot;: 244,
+      &quot;dtype&quot;: &quot;little-endian float32&quot;,
+      &quot;cell_shape&quot;: [256, 256, 256],
+      &quot;scalar_shape&quot;: [256, 256, 256],
+      &quot;velocity_shape&quot;: [3, 256, 256, 256],
+      &quot;reshape_order&quot;: &quot;C&quot;.</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer">
+  <div class="container">
+    <span>GLIDENet: Gas-Liquid Interfacial Dynamics Ensemble Network</span>
+    <span>
+      <a href="https://github.com/yang226159802/GLIDENet">GitHub</a>
+      &nbsp;|&nbsp;
+      <a href="mailto:226159802@qq.com">Contact</a>
+    </span>
+  </div>
+</footer>
+
+    <script src="js/site.js"></script>
+  </body>
+</html>

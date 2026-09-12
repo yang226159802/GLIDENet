@@ -1,0 +1,35 @@
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.publication-list,
+.tutorial-list,
+.check-list {
+  padding-left: 22px;
+}
+
+.publication-list li,
+.tutorial-list li,
+.check-list li {
+  margin-bottom: 8px;
+}
+
+.event-placeholder {
+  min-height: 220px;
+}
+
+.citation-box {
+  white-space: pre-wrap;
+}
+
+.quick-info-list {
+  padding-left: 20px;
+}
+
+.quick-info-list li {
+  margin-bottom: 8px;
+  white-space: pre-line;
+}

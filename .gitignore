@@ -1,0 +1,24 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+__pycache__/
+*.py[cod]
+
+.vscode/
+.idea/
+
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.npz
+*.h5
+*.hdf5
+*.zarr/
+
+# Local source figures before they are renamed into website/assets.
+图片*.png
+
+generated_id.txt

@@ -1,0 +1,131 @@
+name: Dataset intake
+on:
+  push:
+    paths:
+      - 'datasets/**.json'
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  issue-precheck:
+    name: Issue precheck
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add review labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['automated-precheck', 'needs-human-review']
+            });
+
+      - name: Post intake comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = [
+              'Automated precheck received this dataset submission.',
+              '',
+              'Maintainer review is still required before catalogue publication.',
+              '',
+              'Precheck scope:',
+              '- confirms the request entered the dataset intake queue;',
+              '- reminds reviewers by email when SMTP secrets are configured;',
+              '- checks PR metadata files when a contributor opens a pull request;',
+              '- leaves scientific suitability, license interpretation, and final acceptance to maintainers.'
+            ].join('\n');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+  issue-to-pr:
+    name: Generate dataset from issue
+    if: github.event_name == 'issues' && github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate dataset files
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: python scripts/issue_to_json.py
+
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID=$(cat generated_id.txt)
+          BRANCH="dataset/${ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "datasets/${ID}.json"
+          [ -d "website/assets/${ID}" ] && git add "website/assets/${ID}"
+          git commit -m "add dataset ${ID} from issue"
+          git push origin "$BRANCH"
+          gh pr create --draft --title "Add dataset ${ID}" --body "Auto-generated from an issue. Please review the generated JSON and images." --base "${{ github.event.repository.default_branch }}" --head "$BRANCH"
+
+  metadata-validation:
+    name: Metadata validation
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Validate dataset metadata
+        run: python scripts/validate_dataset_metadata.py
+      - name: Auto-generate stale files
+        run: |
+          python scripts/generate_datasets_js.py
+          python scripts/generate_dataset_pages.py
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: auto-generate dataset data and detail pages [skip ci]"
+            if [ -n "${{ github.head_ref }}" ]; then git push origin HEAD:${{ github.head_ref }}; else git push; fi
+          fi
+
+  notify-reviewers:
+    name: Notify reviewers
+    if: always() && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    needs: [issue-precheck, metadata-validation]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Send reviewer notification
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_SERVER_URL: ${{ github.server_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/notify_reviewers.py

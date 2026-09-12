@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }} | GLIDENet</title>
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body data-page="datasets">
+    {{ nav }}
+    <main class="site-main">
+      <section class="page-intro">
+        <div class="container">
+          <h1>{{ title }}</h1>
+          <p>{{ subtitle }}</p>
+        </div>
+      </section>
+
+      <section class="section two-column">
+        <div>
+          {{ detail_images }}
+          <h2>Description</h2>
+          <p>{{ description }}</p>
+          {{ cases_section }}
+        </div>
+        <aside class="side-card">
+          <h2>Dataset Access</h2>
+          {{ open_button }}
+          <h3>Quick Info</h3>
+          <ul class="quick-info-list">
+            {{ quick_info_items }}
+          </ul>
+        </aside>
+      </section>
+    </main>
+    {{ footer }}
+    <script src="js/site.js"></script>
+  </body>
+</html>

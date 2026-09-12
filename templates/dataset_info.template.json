@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1.0",
+  "id": "lowercase_dataset_id",
+  "title": "Dataset title",
+  "version": "1.0.0",
+  "status": "draft",
+  "description": "One paragraph summary.",
+  "domain": {
+    "field": "multiphase_flow",
+    "flow_type": "two_phase_flow",
+    "configuration": "droplet/bubble/spray/film/etc.",
+    "phases": ["liquid", "gas"],
+    "interface_method": "VOF/level_set/front_tracking/phase_field/experiment/etc.",
+    "solver_or_source": "solver, experiment, or data source",
+    "boundary_conditions": "describe boundary conditions",
+    "spatial_dimension": 3
+  },
+  "ai_tasks": [],
+  "data": {
+    "public_access_url": "https://...",
+    "doi": "10....",
+    "format": "hdf5/zarr/npz/vtk/etc.",
+    "num_samples": 0,
+    "arrays": [
+      {
+        "name": "field_name",
+        "description": "field description",
+        "shape": [],
+        "units": "SI or nondimensional",
+        "value_range": []
+      }
+    ]
+  },
+  "splits": {
+    "policy": "describe train/validation/test split"
+  },
+  "license": {
+    "data_license": "CC BY 4.0",
+    "code_license": "MIT",
+    "usage_notes": ""
+  },
+  "citation": {
+    "preferred_citation": "",
+    "authors": [],
+    "contact": ""
+  },
+  "provenance": {
+    "generation_method": "",
+    "software": "",
+    "hardware": "",
+    "date_created": ""
+  }
+}

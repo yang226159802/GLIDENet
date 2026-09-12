@@ -1,0 +1,16 @@
+# Maintainer notification list for dataset intake.
+# The notification workflow reads this file and sends email only when SMTP
+# secrets are configured in the repository settings.
+reviewers:
+  - name: Primary Maintainer
+    email: 18933168496@163.com
+    topics:
+      - general
+      - metadata
+      - multiphase-flow
+  - name: Benchmark Reviewer
+    email: 226159802@qq.com
+    topics:
+      - benchmark
+      - ai-ready
+      - super-resolution

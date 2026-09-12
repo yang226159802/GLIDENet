@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1.0",
+  "requested_track": "New dataset",
+  "title": "Droplet breakup in HIT",
+  "subtitle": "Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15",
+  "description": "Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15. The dataset provides volume-fraction, pressure, and velocity fields over 81 snapshots.",
+  "status": "Seed dataset",
+  "keywords": "interface dynamics, flow-field learning, VOF, droplet breakup, homogeneous isotropic turbulence, DNS analysis",
+  "hosting_platform": "ModelScope",
+  "access_link": "https://modelscope.cn/datasets/yangqianqi/dns-droplet-breakup-hit-we15",
+  "metadata_link": "https://modelscope.cn/datasets/yangqianqi/dns-droplet-breakup-hit-we15/file/view/master/info.json",
+  "grid": "Nx=256, Ny=256, Nz=256",
+  "field_location": "cell-centered",
+  "samples": "81",
+  "format": "custom binary",
+  "file_format": "File format: custom binary\nDirectory structure: dataset/data, dataset/info.json, dataset/README.md, dataset/load_example.py\nLoading script: load_example.py\nNotes for custom binary files:       \n      \"header_bytes\": 244,\n      \"dtype\": \"little-endian float32\",\n      \"cell_shape\": [256, 256, 256],\n      \"scalar_shape\": [256, 256, 256],\n      \"velocity_shape\": [3, 256, 256, 256],\n      \"reshape_order\": \"C\".",
+  "size": "27.18 GB",
+  "case_count": "1",
+  "contributors": "Changxiao Shao, Kun Luo, Yue Yang, Jianren Fan",
+  "contact": "shaochangxiao@hit.edu.cn",
+  "doi": "10.1016/j.ijmultiphaseflow.2018.06.009",
+  "license": "CC-BY-4.0",
+  "preview": "assets/droplet-breakup-in-hit-20260911-013152/cover.png",
+  "detail_images": [
+    "assets/droplet-breakup-in-hit-20260911-013152/detail-1.png"
+  ],
+  "id": "droplet-breakup-in-hit-20260911-013152"
+}

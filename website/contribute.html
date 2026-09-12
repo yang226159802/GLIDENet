@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contribute | GLIDENet</title>
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body data-page="contribute">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">GLIDENet</a>
+        <div class="nav-links">
+          <a href="index.html" data-page="home">Home</a>
+          <a href="datasets.html" data-page="datasets">Datasets</a>
+          <a href="benchmarks.html" data-page="benchmarks">Benchmarks</a>
+          <a href="tutorials.html" data-page="tutorials">Tutorials</a>
+          <a href="contribute.html" data-page="contribute">Contribute</a>
+          <a href="events.html" data-page="events">Events</a>
+          <a href="cite.html" data-page="cite">Cite</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="page-intro">
+        <div class="container">
+          <h1>Contribute</h1>
+          <p>GLIDENet welcomes gas-liquid two-phase CFD and ML dataset contributions. Contributors host large files externally and submit catalogue metadata for automated precheck and maintainer review.</p>
+        </div>
+      </section>
+
+      <section class="section grid-2">
+        <div>
+          <h2>How to Contribute</h2>
+          <ol class="tutorial-list">
+            <li>Package the dataset with clear metadata and at least one readable sample.</li>
+            <li>Upload large files to ModelScope, Kaggle, Zenodo, or institutional storage.</li>
+            <li>Submit a GitHub issue using the dataset submission form.</li>
+            <li>Automation generates a JSON record and draft pull request.</li>
+            <li>Maintainers review metadata, access, license, citation, and practical readability.</li>
+          </ol>
+          <p><a class="button" href="https://github.com/yang226159802/GLIDENet/issues/new?template=dataset_submission.yml">Open a Dataset Submission Issue</a></p>
+        </div>
+        <div class="placeholder-media" aria-label="Contribution image placeholder"></div>
+      </section>
+
+      <section class="section">
+        <h2>Standards for GLIDENet</h2>
+        <p>The catalogue does not force a single data format. It requires clear meaning: variables, units, array shapes, grid, coordinate order, field location, phase convention, file paths, license, citation, and limitations must be unambiguous.</p>
+        <ul class="check-list">
+          <li>Use `info.json` for scientific metadata.</li>
+          <li>Place actual field data under `data/` or document a clear equivalent structure.</li>
+          <li>Include `load_example.py` for custom binary or solver-native files.</li>
+          <li>State whether fields are cell-centered or node-centered.</li>
+          <li>State interface convention, for example whether `alpha = 1` means liquid or gas.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Metadata Format</h2>
+        <p>`info.json` should contain a global section for dataset-level information and a local section for case, sample, or snapshot-level file paths.</p>
+        <pre><code>{
+  "schema_version": "0.1.0",
+  "dataset_type": "gas_liquid_two_phase_cfd",
+  "global": {
+    "dataset_id": "owner/dataset-slug",
+    "title": "Dataset title",
+    "description": "Short dataset description.",
+    "format": "custom binary",
+    "variables": ["alpha", "u", "v", "w", "p"],
+    "grid": {},
+    "physics": {},
+    "contributors": [],
+    "license": "CC-BY-4.0",
+    "doi": "",
+    "known_limitations": []
+  },
+  "local": [
+    {
+      "snapshot_id": "000001",
+      "time": {"value": null, "units": ""},
+      "files": {}
+    }
+  ]
+}</code></pre>
+      </section>
+
+      <section class="section grid-2">
+        <div>
+          <h2>Authors and Contributors</h2>
+          <p>Each dataset record should include contributors, contact, related publication or DOI when available, and a preferred citation. Maintainers review catalogue readiness but do not replace scientific peer review.</p>
+        </div>
+        <div>
+          <h2>Funding</h2>
+          <p>Funding and acknowledgement information for GLIDENet will be added as the project develops.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>GLIDENet: Gas-Liquid Interfacial Dynamics Ensemble Network</span>
+        <span><a href="https://github.com/yang226159802/GLIDENet">GitHub</a> | <a href="mailto:226159802@qq.com">Contact</a></span>
+      </div>
+    </footer>
+    <script src="js/site.js"></script>
+  </body>
+</html>
