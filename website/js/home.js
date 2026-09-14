@@ -25,18 +25,33 @@
   }
 
   function formatCaseCount(value) {
-    return String(Math.max(0, value)).padStart(3, "0").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return String(Math.max(0, value)).padStart(3, "0");
   }
 
   function formatTotalData(value) {
-    return String(Math.round(Math.max(0, value))).padStart(6, "0").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return String(Math.round(Math.max(0, value))).padStart(6, "0");
+  }
+
+  function renderBoxes(value, options) {
+    const text = String(value);
+    const groups = text.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const boxes = Array.from(groups)
+      .map((character) => {
+        if (character === ",") return '<span class="stat-comma">,</span>';
+        return '<span class="stat-box">' + character + "</span>";
+      })
+      .join("");
+    const suffix = options && options.suffix
+      ? '<span class="stat-box stat-unit">' + options.suffix + "</span>"
+      : "";
+    return boxes + suffix;
   }
 
   function setStats() {
     const cases = datasets.reduce((sum, dataset) => sum + (dataset.caseCount || 1), 0);
     const gigabytes = datasets.reduce((sum, dataset) => sum + parseGigabytes(dataset.size), 0);
-    if (caseCount) caseCount.textContent = formatCaseCount(cases);
-    if (totalData) totalData.textContent = formatTotalData(gigabytes);
+    if (caseCount) caseCount.innerHTML = renderBoxes(formatCaseCount(cases));
+    if (totalData) totalData.innerHTML = renderBoxes(formatTotalData(gigabytes), { suffix: "GB" });
     if (datasetCount) datasetCount.textContent = String(datasets.length);
     if (caseTotal) caseTotal.textContent = String(cases);
   }

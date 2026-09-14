@@ -20,20 +20,41 @@
 }
 
 .hero-stat strong {
-  display: inline-flex;
-  min-width: 160px;
+  display: flex;
   min-height: 48px;
-  padding: 4px 12px;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text);
+  font-size: 31px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.stat-box {
+  display: inline-flex;
+  min-width: 34px;
+  min-height: 48px;
+  padding: 4px 8px;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   background: #ffffff;
-  color: var(--color-text);
-  font-size: 31px;
-  line-height: 1.1;
-  font-weight: 700;
+  color: inherit;
   transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.stat-unit {
+  min-width: 48px;
+}
+
+.stat-comma {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: end;
+  color: var(--color-muted);
+  font-size: 31px;
+  line-height: 1;
 }
 
 .hero-stat span {
@@ -41,7 +62,7 @@
   font-size: 18px;
 }
 
-.hero-stat:hover strong {
+.hero-stat:hover .stat-box {
   border-color: var(--color-link);
   background: var(--color-link);
   color: #ffffff;
