@@ -25,11 +25,11 @@
   }
 
   function formatCaseCount(value) {
-    return String(Math.max(0, value)).padStart(3, "0");
+    return String(Math.max(0, value)).padStart(3, "0").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   function formatTotalData(value) {
-    return String(Math.round(Math.max(0, value))).padStart(6, "0");
+    return String(Math.round(Math.max(0, value))).padStart(6, "0").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   function setStats() {

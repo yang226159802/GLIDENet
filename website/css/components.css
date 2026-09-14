@@ -116,12 +116,12 @@
 .preview-card {
   display: block;
   color: var(--color-link);
-  text-align: center;
+  text-align: left;
   font-weight: 700;
 }
 
 .preview-card:hover {
-  text-decoration: none;
+  color: var(--color-link-dark);
 }
 
 .preview-image-wrap {
@@ -146,17 +146,24 @@
 }
 
 .preview-card span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   display: block;
-  margin-top: 12px;
+  padding: 34px 18px 16px;
   color: var(--color-link);
-  font-size: 21px;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.92) 42%, rgba(255, 255, 255, 0.98));
+  font-size: 22px;
+  line-height: 1.25;
+  text-decoration: none;
 }
 
 .preview-control {
   position: absolute;
-  top: calc(50% - 18px);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
   width: 34px;
   height: 42px;
@@ -175,11 +182,11 @@
 }
 
 .preview-prev {
-  left: -17px;
+  left: 10px;
 }
 
 .preview-next {
-  right: -17px;
+  right: 10px;
 }
 
 .button:hover {
