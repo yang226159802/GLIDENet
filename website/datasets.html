@@ -30,8 +30,8 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="filter-panel">
+      <div class="datasets-layout">
+        <aside class="filter-panel" aria-label="Dataset filters">
           <h2>Filter Datasets</h2>
           <div class="filter-groups">
             <div class="filter-group">
@@ -63,16 +63,20 @@
               <span class="filter-option">Categories pending</span>
             </div>
           </div>
-        </div>
+        </aside>
 
-        <label>
-          Search datasets
-          <input id="dataset-search" type="search" placeholder="droplet, VOF, DNS, ModelScope" />
-        </label>
-        <h2>GLIDENet Datasets</h2>
-        <div class="dataset-gallery" id="dataset-grid"></div>
-        <p>Unless otherwise specified on each dataset page, dataset reuse follows the license declared by the original data provider. Always cite the dataset page and related publication when available.</p>
-      </section>
+        <div class="datasets-main">
+          <section class="section">
+            <label>
+              Search datasets
+              <input id="dataset-search" type="search" placeholder="droplet, VOF, DNS, ModelScope" />
+            </label>
+            <h2>GLIDENet Datasets</h2>
+            <div class="dataset-gallery" id="dataset-grid"></div>
+            <p>Unless otherwise specified on each dataset page, dataset reuse follows the license declared by the original data provider. Always cite the dataset page and related publication when available.</p>
+          </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">

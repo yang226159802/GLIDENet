@@ -16,22 +16,33 @@
         </div>
       </section>
 
-      <section class="section two-column">
-        <div>
+      <div class="doc-layout">
+        <aside class="page-sidebar" aria-label="Dataset page sections">
+          <h2>On this page</h2>
+          <a href="#description">Description</a>
+          <a href="#dataset-access">Dataset Access</a>
+          <a href="#quick-info">Quick Info</a>
+          {{ cases_nav }}
+        </aside>
+        <div class="doc-main">
+          <section class="section">
           {{ detail_images }}
-          <h2>Description</h2>
+          <h2 id="description">Description</h2>
           <p>{{ description }}</p>
-          {{ cases_section }}
-        </div>
-        <aside class="side-card">
-          <h2>Dataset Access</h2>
+          </section>
+          <section class="section">
+          <h2 id="dataset-access">Dataset Access</h2>
           {{ open_button }}
-          <h3>Quick Info</h3>
+          </section>
+          {{ cases_section }}
+          <section class="section">
+          <h2 id="quick-info">Quick Info</h2>
           <ul class="quick-info-list">
             {{ quick_info_items }}
           </ul>
-        </aside>
-      </section>
+          </section>
+        </div>
+      </div>
     </main>
     {{ footer }}
     <script src="js/site.js"></script>

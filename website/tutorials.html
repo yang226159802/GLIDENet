@@ -30,67 +30,72 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2>Quick-start</h2>
-        <div class="grid-3">
-          <div>
+      <div class="doc-layout">
+        <aside class="page-sidebar" aria-label="Tutorial sections">
+          <h2>On this page</h2>
+          <a href="#quick-start">Quick-start</a>
+          <a href="#kaggle-cli">Kaggle Command Line API</a>
+          <a href="#kagglehub">KaggleHub and cURL Download</a>
+          <a href="#modelscope">ModelScope Upload and Download</a>
+          <a href="#binary-data">Reading Solver-specific Binary Data</a>
+        </aside>
+
+        <div class="doc-main">
+          <section class="section">
+            <h2 id="quick-start">Quick-start</h2>
             <h3>Browsing Data</h3>
             <p>Use the Datasets page to inspect preview images, case counts, metadata, license information, and links to external hosting platforms.</p>
-          </div>
-          <div>
             <h3>Dataset Download</h3>
             <p>Small datasets can usually be downloaded through the hosting platform's web interface. Large datasets should be downloaded with Kaggle CLI, KaggleHub, ModelScope SDK, ModelScope CLI, or Git LFS.</p>
-          </div>
-          <div>
             <h3>Using Local Workstations or Clusters</h3>
             <p>For cluster uploads, prepare credentials carefully and verify network access to the target host before starting large transfers.</p>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section class="section">
-        <h2>Kaggle Command Line API</h2>
-        <p>Install Kaggle CLI with Python and configure credentials before uploading or downloading datasets.</p>
-        <pre><code>python3 -m pip install --user --upgrade kaggle
+          <section class="section">
+            <h2 id="kaggle-cli">Kaggle Command Line API</h2>
+            <p>Install Kaggle CLI with Python and configure credentials before uploading or downloading datasets.</p>
+            <pre><code>python3 -m pip install --user --upgrade kaggle
 mkdir -p ~/.kaggle
 chmod 700 ~/.kaggle
 mv kaggle.json ~/.kaggle/kaggle.json
 chmod 600 ~/.kaggle/kaggle.json
 kaggle datasets list -m</code></pre>
-        <p>A Kaggle package should include `dataset-metadata.json`, `info.json`, `README.md`, `load_example.py`, `checksums.sha256`, and `data/` when possible.</p>
-        <pre><code>kaggle datasets init -p &lt;path/to/dataset&gt;
+            <p>A Kaggle package should include `dataset-metadata.json`, `info.json`, `README.md`, `load_example.py`, `checksums.sha256`, and `data/` when possible.</p>
+            <pre><code>kaggle datasets init -p &lt;path/to/dataset&gt;
 kaggle datasets create -p . -r tar -t
 kaggle datasets download -d &lt;owner&gt;/&lt;dataset-name&gt; --unzip</code></pre>
-      </section>
+          </section>
 
-      <section class="section">
-        <h2>KaggleHub and cURL Download</h2>
-        <p>KaggleHub can download datasets from Python after credentials are configured through interactive login, environment variables, or `~/.kaggle/kaggle.json`.</p>
-        <pre><code>import kagglehub
+          <section class="section">
+            <h2 id="kagglehub">KaggleHub and cURL Download</h2>
+            <p>KaggleHub can download datasets from Python after credentials are configured through interactive login, environment variables, or `~/.kaggle/kaggle.json`.</p>
+            <pre><code>import kagglehub
 
 kagglehub.dataset_download("&lt;owner&gt;/&lt;dataset-name&gt;")
 kagglehub.dataset_download("&lt;owner&gt;/&lt;dataset-name&gt;", path="data.csv", output_dir="./data")</code></pre>
-        <p>cURL can also be used for direct API downloads when username and API key are available.</p>
-      </section>
+            <p>cURL can also be used for direct API downloads when username and API key are available.</p>
+          </section>
 
-      <section class="section">
-        <h2>ModelScope Upload and Download</h2>
-        <p>ModelScope is recommended for China-accessible dataset hosting. Create a dataset repository, prepare `README.md`, `info.json`, and `data/`, then upload through Git, Python SDK, CLI, or the web interface.</p>
-        <pre><code>git lfs install
+          <section class="section">
+            <h2 id="modelscope">ModelScope Upload and Download</h2>
+            <p>ModelScope is recommended for China-accessible dataset hosting. Create a dataset repository, prepare `README.md`, `info.json`, and `data/`, then upload through Git, Python SDK, CLI, or the web interface.</p>
+            <pre><code>git lfs install
 git clone https://www.modelscope.cn/datasets/&lt;namespace&gt;/&lt;dataset-name&gt;.git
 git lfs track "data/*"
 git add .gitattributes .
 git commit -m "Upload dataset"
 git push</code></pre>
-        <pre><code>modelscope login --token YOUR_MODELSCOPE_TOKEN
+            <pre><code>modelscope login --token YOUR_MODELSCOPE_TOKEN
 modelscope upload owner_name/repo_name /path/to/your_folder --repo-type dataset
 modelscope download --dataset &lt;namespace&gt;/&lt;dataset-name&gt; --local_dir ./data</code></pre>
-      </section>
+          </section>
 
-      <section class="section">
-        <h2>Reading Solver-specific Binary Data</h2>
-        <p>For extensionless or solver-specific files such as `Gvol.000001`, `V.000001`, and `P.000001`, metadata must document header bytes, dtype, endianness, payload shape, vector component order, reshape order, units, grid, and field location. A tested `load_example.py` is mandatory.</p>
-      </section>
+          <section class="section">
+            <h2 id="binary-data">Reading Solver-specific Binary Data</h2>
+            <p>For extensionless or solver-specific files such as `Gvol.000001`, `V.000001`, and `P.000001`, metadata must document header bytes, dtype, endianness, payload shape, vector component order, reshape order, units, grid, and field location. A tested `load_example.py` is mandatory.</p>
+          </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">

@@ -9,7 +9,7 @@
 }
 
 .section {
-  padding: 42px 0;
+  padding: 34px 0;
 }
 
 .section + .section {
@@ -21,7 +21,7 @@
 }
 
 .page-intro {
-  padding: 42px 0 24px;
+  padding: 38px 0 26px;
   border-bottom: 1px solid var(--color-line);
   background: var(--color-page);
 }
@@ -37,6 +37,26 @@
   grid-template-columns: minmax(0, 1fr) 280px;
   gap: 34px;
   align-items: start;
+}
+
+.doc-layout,
+.datasets-layout {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.doc-main,
+.datasets-main {
+  min-width: 0;
+}
+
+.doc-main .section,
+.datasets-main .section {
+  width: 100%;
 }
 
 .grid-2,
@@ -55,6 +75,8 @@
 
 @media (max-width: 820px) {
   .two-column,
+  .doc-layout,
+  .datasets-layout,
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;

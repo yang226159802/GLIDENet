@@ -83,7 +83,9 @@ def build_page(record: dict, template: str, nav: str, footer: str) -> str | None
         open_button = ""
 
     cases_section = ""
+    cases_nav = ""
     if case_count > 1:
+        cases_nav = '<a href="#cases">Cases</a>'
         rows: list[str] = []
         total = max(len(access_links), len(metadata_links))
         for i in range(total):
@@ -93,12 +95,13 @@ def build_page(record: dict, template: str, nav: str, footer: str) -> str | None
             meta_td = f'<a href="{_href(meta)}">info.json</a>' if meta else "-"
             rows.append(f"<tr><td>{acc_td}</td><td>{meta_td}</td></tr>")
         cases_section = (
-            "<h2>Cases</h2>"
+            '<section class="section">'
+            '<h2 id="cases">Cases</h2>'
             '<table class="data-table"><thead><tr>'
             "<th>Dataset link</th><th>info.json</th>"
             "</tr></thead><tbody>"
             + "".join(rows)
-            + "</tbody></table>"
+            + "</tbody></table></section>"
         )
 
     detail_images = record.get("detail_images", [])
@@ -151,6 +154,7 @@ def build_page(record: dict, template: str, nav: str, footer: str) -> str | None
             "detail_images": detail_images_inline,
             "open_button": open_button,
             "cases_section": cases_section,
+            "cases_nav": cases_nav,
             "quick_info_items": "\n".join(items),
             "nav": nav,
             "footer": footer,

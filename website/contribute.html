@@ -30,37 +30,46 @@
         </div>
       </section>
 
-      <section class="section grid-2">
-        <div>
-          <h2>How to Contribute</h2>
-          <ol class="tutorial-list">
-            <li>Package the dataset with clear metadata and at least one readable sample.</li>
-            <li>Upload large files to ModelScope, Kaggle, Zenodo, or institutional storage.</li>
-            <li>Submit a GitHub issue using the dataset submission form.</li>
-            <li>Automation generates a JSON record and draft pull request.</li>
-            <li>Maintainers review metadata, access, license, citation, and practical readability.</li>
-          </ol>
-          <p><a class="button" href="https://github.com/yang226159802/GLIDENet/issues/new?template=dataset_submission.yml">Open a Dataset Submission Issue</a></p>
-        </div>
-        <div class="placeholder-media" aria-label="Contribution image placeholder"></div>
-      </section>
+      <div class="doc-layout">
+        <aside class="page-sidebar" aria-label="Contribution sections">
+          <h2>On this page</h2>
+          <a href="#how-to-contribute">How to Contribute</a>
+          <a href="#standards">Standards for GLIDENet</a>
+          <a href="#metadata-format">Metadata Format</a>
+          <a href="#authors">Authors and Contributors</a>
+          <a href="#funding">Funding</a>
+        </aside>
 
-      <section class="section">
-        <h2>Standards for GLIDENet</h2>
-        <p>The catalogue does not force a single data format. It requires clear meaning: variables, units, array shapes, grid, coordinate order, field location, phase convention, file paths, license, citation, and limitations must be unambiguous.</p>
-        <ul class="check-list">
-          <li>Use `info.json` for scientific metadata.</li>
-          <li>Place actual field data under `data/` or document a clear equivalent structure.</li>
-          <li>Include `load_example.py` for custom binary or solver-native files.</li>
-          <li>State whether fields are cell-centered or node-centered.</li>
-          <li>State interface convention, for example whether `alpha = 1` means liquid or gas.</li>
-        </ul>
-      </section>
+        <div class="doc-main">
+          <section class="section">
+            <h2 id="how-to-contribute">How to Contribute</h2>
+            <ol class="tutorial-list">
+              <li>Package the dataset with clear metadata and at least one readable sample.</li>
+              <li>Upload large files to ModelScope, Kaggle, Zenodo, or institutional storage.</li>
+              <li>Submit a GitHub issue using the dataset submission form.</li>
+              <li>Automation generates a JSON record and draft pull request.</li>
+              <li>Maintainers review metadata, access, license, citation, and practical readability.</li>
+            </ol>
+            <p><a class="button" href="https://github.com/yang226159802/GLIDENet/issues/new?template=dataset_submission.yml">Open a Dataset Submission Issue</a></p>
+            <div class="placeholder-media" aria-label="Contribution image placeholder"></div>
+          </section>
 
-      <section class="section">
-        <h2>Metadata Format</h2>
-        <p>`info.json` should contain a global section for dataset-level information and a local section for case, sample, or snapshot-level file paths.</p>
-        <pre><code>{
+          <section class="section">
+            <h2 id="standards">Standards for GLIDENet</h2>
+            <p>The catalogue does not force a single data format. It requires clear meaning: variables, units, array shapes, grid, coordinate order, field location, phase convention, file paths, license, citation, and limitations must be unambiguous.</p>
+            <ul class="check-list">
+              <li>Use `info.json` for scientific metadata.</li>
+              <li>Place actual field data under `data/` or document a clear equivalent structure.</li>
+              <li>Include `load_example.py` for custom binary or solver-native files.</li>
+              <li>State whether fields are cell-centered or node-centered.</li>
+              <li>State interface convention, for example whether `alpha = 1` means liquid or gas.</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2 id="metadata-format">Metadata Format</h2>
+            <p>`info.json` should contain a global section for dataset-level information and a local section for case, sample, or snapshot-level file paths.</p>
+            <pre><code>{
   "schema_version": "0.1.0",
   "dataset_type": "gas_liquid_two_phase_cfd",
   "global": {
@@ -84,18 +93,19 @@
     }
   ]
 }</code></pre>
-      </section>
+          </section>
 
-      <section class="section grid-2">
-        <div>
-          <h2>Authors and Contributors</h2>
-          <p>Each dataset record should include contributors, contact, related publication or DOI when available, and a preferred citation. Maintainers review catalogue readiness but do not replace scientific peer review.</p>
+          <section class="section">
+            <h2 id="authors">Authors and Contributors</h2>
+            <p>Each dataset record should include contributors, contact, related publication or DOI when available, and a preferred citation. Maintainers review catalogue readiness but do not replace scientific peer review.</p>
+          </section>
+
+          <section class="section">
+            <h2 id="funding">Funding</h2>
+            <p>Funding and acknowledgement information for GLIDENet will be added as the project develops.</p>
+          </section>
         </div>
-        <div>
-          <h2>Funding</h2>
-          <p>Funding and acknowledgement information for GLIDENet will be added as the project develops.</p>
-        </div>
-      </section>
+      </div>
     </main>
 
     <footer class="site-footer">
