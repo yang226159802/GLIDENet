@@ -26,7 +26,7 @@
     <main class="site-main">
       <section class="hero">
         <div class="container hero-inner">
-          <div>
+          <div class="hero-copy">
             <h1 class="hero-title">GLIDENet</h1>
             <p class="tagline">Gas-Liquid Interfacial Dynamics Ensemble Network</p>
             <p>A community-driven benchmark dataset for gas-liquid two-phase CFD and ML.</p>
@@ -34,8 +34,28 @@
               <a class="button" href="datasets.html">Explore Data</a>
               <a class="button secondary" href="contribute.html">Contribute</a>
             </div>
+            <div class="hero-stats" aria-label="GLIDENet catalogue statistics">
+              <div>
+                <strong id="home-case-count">000</strong>
+                <span>Cases</span>
+              </div>
+              <div>
+                <strong><span id="home-total-data">000000</span> GB</strong>
+                <span>Total Data</span>
+              </div>
+            </div>
           </div>
-          <div class="placeholder-media" aria-label="Hero image placeholder"></div>
+          <section class="hero-preview" aria-label="Dataset cover preview">
+            <button class="preview-control preview-prev" type="button" aria-label="Previous dataset">&#8249;</button>
+            <a class="preview-card" id="home-preview-link" href="datasets.html">
+              <div class="preview-image-wrap">
+                <img id="home-preview-image" alt="" />
+                <div class="image-placeholder" id="home-preview-placeholder" aria-hidden="true"></div>
+              </div>
+              <span id="home-preview-title">Datasets</span>
+            </a>
+            <button class="preview-control preview-next" type="button" aria-label="Next dataset">&#8250;</button>
+          </section>
         </div>
       </section>
 
@@ -99,7 +119,7 @@
       </div>
     </footer>
     <script src="js/datasets-data.js"></script>
-    <script src="js/datasets-ui.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/site.js"></script>
   </body>
 </html>
