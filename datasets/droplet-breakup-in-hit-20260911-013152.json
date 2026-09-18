@@ -3,7 +3,11 @@
   "requested_track": "New dataset",
   "title": "Droplet breakup in HIT",
   "subtitle": "Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15",
-  "description": "Direct numerical simulation data of a liquid droplet breaking up in forced homogeneous isotropic turbulence at Weber number 15. The dataset provides volume-fraction, pressure, and velocity fields over 81 snapshots.",
+  "description": "The DNS is performed using a mass-conserving level-set method. The incompressible Navier–Stokes equations are solved on a staggered uniform grid 
+  with a second-order finite central-difference scheme and a projection method. A second-order semi-implicit iterative procedure is used for time integration, 
+  and the ghost-fluid method is used for the pressure jump and viscous terms. The level-set and re-initialization equations are discretized with a fifth-order upstream central scheme 
+  and integrated with a second-order semi-implicit Crank–Nicolson scheme. The interface is represented by the zero iso-surface of the level-set function; liquid is ϕ>0, carrier is ϕ<0, and the interface is ϕ=0. 
+  The fast marching method and a least-squares method are used for curvature reconstruction.",
   "status": "Seed dataset",
   "keywords": "interface dynamics, flow-field learning, VOF, droplet breakup, homogeneous isotropic turbulence, DNS analysis",
   "hosting_platform": "ModelScope",
