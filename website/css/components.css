@@ -273,9 +273,21 @@
 
 .filter-option {
   display: block;
-  padding: 3px 0;
+  width: 100%;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
   color: var(--color-muted);
+  cursor: pointer;
+  font: inherit;
   font-size: 14px;
+  text-align: left;
+}
+
+.filter-option:hover,
+.filter-option.is-active {
+  color: var(--color-link);
+  font-weight: 700;
 }
 
 .side-card {

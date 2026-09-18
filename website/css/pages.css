@@ -67,19 +67,19 @@
   line-height: 1;
 }
 
-.hero-stat span {
+.hero-stat > span {
   color: rgba(255, 255, 255, 0.82);
   font-size: 18px;
 }
 
 .hero-stat:hover .stat-box {
   border-color: var(--color-link);
-  background: var(--color-link);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--color-link);
 }
 
-.hero-stat:hover span {
-  color: #ffffff;
+.hero-stat:hover > span {
+  color: var(--color-link);
 }
 
 .home-figure {
@@ -93,6 +93,34 @@
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   background: #ffffff;
+}
+
+.dataset-search {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+  max-width: 720px;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dataset-search input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 18px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 18px;
+}
+
+.dataset-search input:focus {
+  border-color: var(--color-link);
+  outline: 3px solid rgba(47, 111, 187, 0.16);
 }
 
 .publication-list,

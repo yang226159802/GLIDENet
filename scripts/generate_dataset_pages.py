@@ -129,6 +129,7 @@ def build_page(record: dict, template: str, nav: str, footer: str) -> str | None
         ("Contributors", "contributors"),
         ("Contact", "contact"),
         ("License", "license"),
+        ("Dimension", "dimension"),
         ("Grid", "grid"),
         ("Field location", "field_location"),
         ("Samples / snapshots", "samples"),
@@ -139,7 +140,9 @@ def build_page(record: dict, template: str, nav: str, footer: str) -> str | None
     ]
     doi = _text(record.get("doi"))
     if doi:
-        items.append(f'<li><a href="https://doi.org/{_href(record.get("doi"))}">DOI</a></li>')
+        paper_title = _text(record.get("paper_title"))
+        paper_label = f"Paper: {paper_title} " if paper_title else "Paper: "
+        items.append(f'<li>{paper_label}<a href="https://doi.org/{_href(record.get("doi"))}">{doi}</a></li>')
     for label, key in field_map:
         value = _text(record.get(key))
         if value:

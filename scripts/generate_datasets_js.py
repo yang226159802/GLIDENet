@@ -52,6 +52,7 @@ def build_entry(record: dict) -> dict:
         "tags": tags,
         "samples": (record.get("samples") or "").strip(),
         "grid": (record.get("grid") or "").strip(),
+        "dimension": (record.get("dimension") or "").strip(),
         "fieldLocation": (record.get("field_location") or "").strip(),
         "format": (record.get("format") or "").strip(),
         "license": (record.get("license") or "").strip(),
@@ -61,6 +62,7 @@ def build_entry(record: dict) -> dict:
         "detailUrl": f"dataset-{record.get('id', 'unknown')}.html",
         "caseCount": case_count,
         "hostingPlatform": (record.get("hosting_platform") or "").strip(),
+        "paperTitle": (record.get("paper_title") or "").strip(),
         "categories": record.get("categories", []),
     }
 

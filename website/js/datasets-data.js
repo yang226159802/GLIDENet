@@ -15,6 +15,7 @@ window.DATASETS = [
     ],
     "samples": "81",
     "grid": "Nx=256, Ny=256, Nz=256",
+    "dimension": "3",
     "fieldLocation": "cell-centered",
     "format": "custom binary",
     "license": "CC-BY-4.0",
@@ -24,6 +25,7 @@ window.DATASETS = [
     "detailUrl": "dataset-droplet-breakup-in-hit-20260911-013152.html",
     "caseCount": 1,
     "hostingPlatform": "ModelScope",
+    "paperTitle": "A numerical framework for simulating liquid droplet breakup in isotropic turbulence",
     "categories": []
   }
 ];

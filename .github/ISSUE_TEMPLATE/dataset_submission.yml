@@ -130,6 +130,18 @@ body:
     validations:
       required: false
 
+  - type: dropdown
+    id: dimension
+    attributes:
+      label: Dimension
+      description: Spatial dimension of the dataset.
+      options:
+        - "1"
+        - "2"
+        - "3"
+    validations:
+      required: true
+
   - type: input
     id: grid
     attributes:
@@ -221,6 +233,15 @@ body:
       label: Contact
       description: Email or GitHub handle for follow-up questions.
       placeholder: name@example.edu
+    validations:
+      required: true
+
+  - type: input
+    id: paper_title
+    attributes:
+      label: Paper title
+      description: Related paper title or preferred publication title.
+      placeholder: A numerical framework for simulating liquid droplet breakup in isotropic turbulence
     validations:
       required: true
 

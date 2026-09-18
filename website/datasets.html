@@ -36,39 +36,27 @@
           <div class="filter-groups">
             <div class="filter-group">
               <h3>Show All</h3>
-              <span class="filter-option">All GLIDENet datasets</span>
-            </div>
-            <div class="filter-group">
-              <h3>Flow Type</h3>
-              <span class="filter-option">Categories pending</span>
-            </div>
-            <div class="filter-group">
-              <h3>Data Type</h3>
-              <span class="filter-option">Categories pending</span>
+              <button class="filter-option is-active" type="button" data-filter-group="all" data-filter-value="all">All GLIDENet datasets</button>
             </div>
             <div class="filter-group">
               <h3>Dimension</h3>
-              <span class="filter-option">Categories pending</span>
-            </div>
-            <div class="filter-group">
-              <h3>Flow Configuration</h3>
-              <span class="filter-option">Categories pending</span>
-            </div>
-            <div class="filter-group">
-              <h3>Benchmark Datasets</h3>
-              <span class="filter-option">Categories pending</span>
+              <button class="filter-option" type="button" data-filter-group="dimension" data-filter-value="1">1D</button>
+              <button class="filter-option" type="button" data-filter-group="dimension" data-filter-value="2">2D</button>
+              <button class="filter-option" type="button" data-filter-group="dimension" data-filter-value="3">3D</button>
             </div>
             <div class="filter-group">
               <h3>Hosting Platform</h3>
-              <span class="filter-option">Categories pending</span>
+              <button class="filter-option" type="button" data-filter-group="hosting" data-filter-value="kaggle">Kaggle</button>
+              <button class="filter-option" type="button" data-filter-group="hosting" data-filter-value="modelscope">ModelScope</button>
+              <button class="filter-option" type="button" data-filter-group="hosting" data-filter-value="other">Other</button>
             </div>
           </div>
         </aside>
 
         <div class="datasets-main">
           <section class="section">
-            <label>
-              Search datasets
+            <label class="dataset-search">
+              <span>Search datasets</span>
               <input id="dataset-search" type="search" placeholder="droplet, VOF, DNS, ModelScope" />
             </label>
             <h2>GLIDENet Datasets</h2>
