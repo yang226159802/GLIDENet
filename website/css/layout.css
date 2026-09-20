@@ -12,10 +12,6 @@
   padding: 34px 0;
 }
 
-.section-narrow {
-  max-width: 860px;
-}
-
 .page-intro {
   padding: 38px 0 26px;
   border-bottom: 1px solid var(--color-line);
