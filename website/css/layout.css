@@ -12,10 +12,6 @@
   padding: 34px 0;
 }
 
-.section + .section {
-  border-top: 1px solid var(--color-line);
-}
-
 .section-narrow {
   max-width: 860px;
 }
