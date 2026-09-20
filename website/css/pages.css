@@ -88,12 +88,9 @@
 }
 
 .home-figure img {
+  display: block;
   width: 100%;
-  max-height: 520px;
-  object-fit: contain;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius);
-  background: #ffffff;
+  height: auto;
 }
 
 body:not([data-page="datasets"]) .section h2 {
