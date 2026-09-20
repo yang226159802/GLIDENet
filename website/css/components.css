@@ -20,9 +20,13 @@
 
 .brand {
   color: var(--color-text);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.brand-net {
+  color: var(--color-link);
 }
 
 .nav-links {
@@ -30,7 +34,7 @@
   flex-wrap: wrap;
   gap: 18px;
   align-items: center;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .nav-links a {
