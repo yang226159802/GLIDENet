@@ -8,6 +8,9 @@
   const state = {
     query: "",
     dimension: "",
+    phaseCategory: "",
+    flowRegime: "",
+    reaction: "",
     hosting: ""
   };
 
@@ -53,12 +56,32 @@
     return "other";
   }
 
+  function normalizeCategory(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/_/g, "-")
+      .replace(/\s+/g, "-");
+  }
+
   function matchesFilters(dataset) {
     const dimension = String(dataset.dimension || "").replace(/d$/i, "");
     const matchesDimension = !state.dimension || dimension === state.dimension;
+    const matchesPhaseCategory =
+      !state.phaseCategory || normalizeCategory(dataset.phaseCategory) === state.phaseCategory;
+    const matchesFlowRegime =
+      !state.flowRegime || normalizeCategory(dataset.flowRegime) === state.flowRegime;
+    const matchesReaction =
+      !state.reaction || normalizeCategory(dataset.reaction) === state.reaction;
     const matchesHosting = !state.hosting || normalizedHosting(dataset) === state.hosting;
     const matchesSearch = !state.query || JSON.stringify(dataset).toLowerCase().includes(state.query);
-    return matchesDimension && matchesHosting && matchesSearch;
+    return (
+      matchesDimension &&
+      matchesPhaseCategory &&
+      matchesFlowRegime &&
+      matchesReaction &&
+      matchesHosting &&
+      matchesSearch
+    );
   }
 
   function applyFilters() {
@@ -67,6 +90,9 @@
 
   function resetFilters() {
     state.dimension = "";
+    state.phaseCategory = "";
+    state.flowRegime = "";
+    state.reaction = "";
     state.hosting = "";
     filterButtons.forEach((button) => button.classList.remove("is-active"));
     const showAll = document.querySelector('[data-filter-group="all"]');
@@ -94,7 +120,12 @@
         peer.classList.toggle("is-active", peer === button && state[group] === value);
       });
       const showAll = document.querySelector('[data-filter-group="all"]');
-      if (showAll) showAll.classList.toggle("is-active", !state.dimension && !state.hosting);
+      if (showAll) {
+        showAll.classList.toggle(
+          "is-active",
+          !state.dimension && !state.phaseCategory && !state.flowRegime && !state.reaction && !state.hosting
+        );
+      }
       applyFilters();
     });
   });

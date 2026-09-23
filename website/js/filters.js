@@ -3,6 +3,9 @@ window.GLIDENET_FILTERS = {
   flowType: [],
   dataType: [],
   dimension: [],
+  phaseCategory: [],
+  flowRegime: [],
+  reaction: [],
   configuration: [],
   hosting: []
 };

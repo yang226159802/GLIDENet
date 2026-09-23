@@ -151,6 +151,40 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: phase_category
+    attributes:
+      label: Phase category
+      description: Number of phases represented by the dataset.
+      options:
+        - Single-phase flow
+        - Two-phase flow
+        - Multi-phase flow
+    validations:
+      required: true
+
+  - type: dropdown
+    id: flow_regime
+    attributes:
+      label: Flow regime
+      description: Dominant flow state represented by the dataset.
+      options:
+        - Laminar
+        - Turbulent
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reaction
+    attributes:
+      label: Chemical reaction
+      description: Whether chemical reactions are included.
+      options:
+        - Non-reactive
+        - Reactive
+    validations:
+      required: true
+
   - type: input
     id: field_location
     attributes:
