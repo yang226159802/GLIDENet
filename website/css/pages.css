@@ -17,16 +17,16 @@
 
 .hero-stats {
   display: grid;
-  gap: 12px;
+  gap: 18px;
   margin-top: 20px;
-  max-width: 440px;
+  max-width: 620px;
 }
 
 .hero-stat {
   display: grid;
   grid-template-columns: minmax(160px, max-content) max-content;
   align-items: center;
-  gap: 14px;
+  gap: 22px;
 }
 
 .hero-stat strong {
@@ -47,11 +47,14 @@
   padding: 4px 8px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-line);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius);
-  background: #ffffff;
-  color: #6fa9df;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  background: transparent;
+  color: #ffffff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.1px #ffffff;
+  text-stroke: 1.1px #ffffff;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, -webkit-text-fill-color 0.15s, -webkit-text-stroke-color 0.15s;
 }
 
 .stat-unit {
@@ -62,14 +65,18 @@
   display: inline-flex;
   min-height: 48px;
   align-items: end;
-  color: #6fa9df;
+  color: #ffffff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.1px #ffffff;
+  text-stroke: 1.1px #ffffff;
   font-size: 31px;
   line-height: 1;
 }
 
 .hero-stat > span {
   color: rgba(255, 255, 255, 0.82);
-  font-size: 18px;
+  font-size: 36px;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
@@ -77,6 +84,14 @@
   border-color: #8f98a3;
   background: #8f98a3;
   color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-text-stroke-color: #ffffff;
+}
+
+.hero-stat:hover .stat-comma {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-text-stroke-color: #ffffff;
 }
 
 .hero-stat:hover > span {

@@ -3,6 +3,7 @@
   const grid = document.querySelector("#dataset-grid");
   const search = document.querySelector("#dataset-search");
   const filterButtons = document.querySelectorAll("[data-filter-group]");
+  const resetButtons = document.querySelectorAll("[data-filter-reset]");
   const count = document.querySelector("#dataset-count");
   const caseTotal = document.querySelector("#case-total");
   const state = {
@@ -88,6 +89,16 @@
     render(datasets.filter(matchesFilters));
   }
 
+  function updateShowAllState() {
+    const showAll = document.querySelector('[data-filter-group="all"]');
+    if (showAll) {
+      showAll.classList.toggle(
+        "is-active",
+        !state.dimension && !state.phaseCategory && !state.flowRegime && !state.reaction && !state.hosting
+      );
+    }
+  }
+
   function resetFilters() {
     state.dimension = "";
     state.phaseCategory = "";
@@ -95,8 +106,16 @@
     state.reaction = "";
     state.hosting = "";
     filterButtons.forEach((button) => button.classList.remove("is-active"));
-    const showAll = document.querySelector('[data-filter-group="all"]');
-    if (showAll) showAll.classList.add("is-active");
+    updateShowAllState();
+  }
+
+  function resetFilterGroup(group) {
+    if (!Object.prototype.hasOwnProperty.call(state, group)) return;
+    state[group] = "";
+    document.querySelectorAll('[data-filter-group="' + group + '"]').forEach((peer) => {
+      peer.classList.remove("is-active");
+    });
+    updateShowAllState();
   }
 
   if (search) {
@@ -119,13 +138,14 @@
       document.querySelectorAll('[data-filter-group="' + group + '"]').forEach((peer) => {
         peer.classList.toggle("is-active", peer === button && state[group] === value);
       });
-      const showAll = document.querySelector('[data-filter-group="all"]');
-      if (showAll) {
-        showAll.classList.toggle(
-          "is-active",
-          !state.dimension && !state.phaseCategory && !state.flowRegime && !state.reaction && !state.hosting
-        );
-      }
+      updateShowAllState();
+      applyFilters();
+    });
+  });
+
+  resetButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      resetFilterGroup(button.dataset.filterReset || "");
       applyFilters();
     });
   });
