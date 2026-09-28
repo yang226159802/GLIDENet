@@ -46,6 +46,10 @@
   min-width: 0;
 }
 
+.doc-main {
+  padding-bottom: 45vh;
+}
+
 .doc-main .section,
 .datasets-main .section {
   width: 100%;
