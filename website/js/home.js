@@ -38,11 +38,11 @@
     const boxes = Array.from(groups)
       .map((character) => {
         if (character === ",") return '<span class="stat-comma">,</span>';
-        return '<span class="stat-box">' + character + "</span>";
+        return '<span class="stat-box"><span class="stat-glyph">' + character + "</span></span>";
       })
       .join("");
     const suffix = options && options.suffix
-      ? '<span class="stat-box stat-unit">' + options.suffix + "</span>"
+      ? '<span class="stat-box stat-unit"><span class="stat-glyph">' + options.suffix + "</span></span>"
       : "";
     return boxes + suffix;
   }

@@ -49,16 +49,26 @@
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius);
-  background: transparent;
+  background: #ffffff;
   color: #ffffff;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.1px #ffffff;
-  text-stroke: 1.1px #ffffff;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s, -webkit-text-fill-color 0.15s, -webkit-text-stroke-color 0.15s;
+  box-shadow: 0 0 0 1px #ffffff;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
 .stat-unit {
   min-width: 48px;
+}
+
+.stat-glyph {
+  background:
+    linear-gradient(90deg, rgba(5, 20, 36, 0.92), rgba(47, 111, 187, 0.58)),
+    url("../../picture/home-hero.png");
+  background-clip: text;
+  background-position: center;
+  background-size: cover;
+  color: var(--color-link);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-comma {
@@ -83,15 +93,31 @@
 .hero-stat:hover .stat-box {
   border-color: #8f98a3;
   background: #8f98a3;
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+.hero-stat:hover .stat-glyph {
+  background: none;
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
-  -webkit-text-stroke-color: #ffffff;
 }
 
 .hero-stat:hover .stat-comma {
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
   -webkit-text-stroke-color: #ffffff;
+}
+
+.hero-stat:active .stat-box {
+  border-color: var(--color-link);
+  background: var(--color-link);
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+.hero-stat:active .stat-glyph {
+  background: none;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }
 
 .hero-stat:hover > span {
