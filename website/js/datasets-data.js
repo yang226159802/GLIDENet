@@ -27,32 +27,6 @@ window.DATASETS = [
     "categories": []
   },
   {
-    "id": "bubble-rise-in-a-large-container-20261028-150034",
-    "title": "Bubble rise in a large container",
-    "subtitle": "Bubble rise in a large container",
-    "status": "community",
-    "tags": [
-      "Bubble"
-    ],
-    "samples": "",
-    "grid": "N/A",
-    "dimension": "3",
-    "phaseCategory": "Two-phase flow",
-    "flowRegime": "Laminar",
-    "reaction": "Non-reactive",
-    "fieldLocation": "N/A",
-    "format": "N/A",
-    "license": "N/A",
-    "size": "4.84 GB",
-    "imageUrl": "assets/bubble-rise-in-a-large-container-20261028-150034/cover.png",
-    "dataUrl": "https://www.modelscope.cn/my/overview",
-    "detailUrl": "dataset-bubble-rise-in-a-large-container-20261028-150034.html",
-    "caseCount": 2,
-    "hostingPlatform": "ModelScope",
-    "paperTitle": "N/A",
-    "categories": []
-  },
-  {
     "id": "drop-breakup-20261028-150357",
     "title": "Drop breakup",
     "subtitle": "Drop breakup",
