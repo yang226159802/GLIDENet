@@ -110,6 +110,34 @@ window.DATASETS = [
     "categories": []
   },
   {
+    "id": "swirling-liquid-jet-atomization-20261029-022620",
+    "title": "Swirling liquid jet atomization",
+    "subtitle": "Swirling liquid jet atomization",
+    "status": "community",
+    "tags": [
+      "Swirling liquid",
+      "jet",
+      "atomization"
+    ],
+    "samples": "",
+    "grid": "N/A",
+    "dimension": "3",
+    "phaseCategory": "Two-phase flow",
+    "flowRegime": "Turbulent",
+    "reaction": "Non-reactive",
+    "fieldLocation": "N/A",
+    "format": "N/A",
+    "license": "N/A",
+    "size": "5000 GB",
+    "imageUrl": "assets/swirling-liquid-jet-atomization-20261029-022620/cover.png",
+    "dataUrl": "https://www.modelscope.cn",
+    "detailUrl": "dataset-swirling-liquid-jet-atomization-20261029-022620.html",
+    "caseCount": 2,
+    "hostingPlatform": "ModelScope",
+    "paperTitle": "N/A",
+    "categories": []
+  },
+  {
     "id": "turbulent-liquid-jet-atomization-20261028-142102",
     "title": "Turbulent liquid jet atomization",
     "subtitle": "A dense cylindrical turbulent liquid jet is continuously injected into a quiescent lighter phase",
