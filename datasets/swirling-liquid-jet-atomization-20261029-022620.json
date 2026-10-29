@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "requested_track": "New dataset",
+  "title": "Swirling liquid jet atomization",
+  "subtitle": "Swirling liquid jet atomization",
+  "description": "Swirling liquid jet atomization",
+  "status": "Community dataset",
+  "keywords": "Swirling liquid, jet, atomization",
+  "hosting_platform": "ModelScope",
+  "access_link": "https://www.modelscope.cn; https://www.modelscope.cn",
+  "metadata_link": "https://www.modelscope.cn; https://www.modelscope.cn",
+  "dimension": "3",
+  "grid": "N/A",
+  "phase_category": "Two-phase flow",
+  "flow_regime": "Turbulent",
+  "reaction": "Non-reactive",
+  "field_location": "N/A",
+  "format": "N/A",
+  "file_format": "N/A",
+  "size": "5000 GB",
+  "case_count": "2",
+  "case_condition": "N/A",
+  "contributors": "N/A",
+  "contact": "N/A",
+  "paper_title": "N/A",
+  "doi": "N/A",
+  "license": "N/A",
+  "preview": "assets/swirling-liquid-jet-atomization-20261029-022620/cover.png",
+  "detail_images": [
+    "assets/swirling-liquid-jet-atomization-20261029-022620/detail-1.png"
+  ],
+  "id": "swirling-liquid-jet-atomization-20261029-022620"
+}
