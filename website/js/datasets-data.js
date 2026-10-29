@@ -43,11 +43,11 @@ window.DATASETS = [
     "fieldLocation": "N/A",
     "format": "N/A",
     "license": "N/A",
-    "size": "3000 GB",
+    "size": "6000 GB",
     "imageUrl": "assets/drop-breakup-20261028-150357/cover.png",
     "dataUrl": "https://www.modelscope.cn/my/overview",
     "detailUrl": "dataset-drop-breakup-20261028-150357.html",
-    "caseCount": 1,
+    "caseCount": 6,
     "hostingPlatform": "ModelScope",
     "paperTitle": "N/A",
     "categories": []
