@@ -43,7 +43,8 @@
           <section class="section">
           <div class="detail-gallery"><img src="assets/turbulent-liquid-jet-atomization-20261028-142102/detail-1.png" alt="Turbulent liquid jet atomization" /></div>
           <h2 id="description">Description</h2>
-          <p>A dense cylindrical liquid jet is continuously injected into a quiescent lighter phase (with a density ratio of 1:27.84), and the inlet velocity is sinusoidally modulated. The solver couples gas-liquid two-phase flow, VOF interface transport, and surface tension to simulate the development of jet shear instability, liquid column breakup, and droplet formation.</p>
+          <p>This dataset simulates the three-dimensional atomisation of a pulsed liquid jet injected into initially stationary gas. Inlet velocity oscillations promote interfacial instabilities, jet breakup, and droplet formation. The computational domain measures 3 × 3 × 3, extending from x = 0 to 3 and from −1.5 to 1.5 in both transverse directions. The jet has a radius of 1/12 and an initial length of 0.025. Its mean inlet velocity is 1, with a sinusoidal fluctuation of amplitude 0.05 and period 0.1; the liquid-to-gas density ratio is 27.84. 
+The simulation is performed with Basilisk, which solves the incompressible two-phase Navier-Stokes equations, tracks the liquid-gas interface using a volume-of-fluid method, and includes surface tension. It starts from a 64³ grid and uses adaptive refinement up to level 11, with a velocity error threshold of 0.1. Snapshots are recorded every 0.1 simulation time units through 3.7. Each configuration varies the jet Reynolds number or Weber number, enabling comparison of their effects on breakup and droplet formation.</p>
           </section>
           <section class="section">
           <h2 id="dataset-access">Dataset Access</h2>
@@ -56,16 +57,16 @@
             <li>Status: Community dataset</li>
 <li>Paper: basilisk example <a href="https://doi.org/https://basilisk.dalembert.upmc.fr/src/examples/atomisation.c">https://basilisk.dalembert.upmc.fr/src/examples/atomisation.c</a></li>
 <li>Contributors: Qianqi yang</li>
-<li>Contact: 226159802@qq.com</li>
+<li>Contact: 18933168496@163.com</li>
 <li>License: Apache License 2.0</li>
 <li>Dimension: 3</li>
-<li>Grid: Nx=2048, Ny=2048, Nz=2048 (AMR)</li>
+<li>Grid: Nx=64, Ny=64, Nz=64 (AMR, basic); Nx=2048, Ny=2048, Nz=2048 (AMR, maxlevel)</li>
 <li>Field location: cell-centered</li>
 <li>Samples / snapshots: 185</li>
 <li>Format: custom binary</li>
 <li>Size: 125 GB</li>
-<li>Case conditions: We = 3000, Re =5800; We = 8000, Re =5800; We = 5556, Re =5800; We = 5556, Re =3000; We = 5556, Re =8000;</li>
-<li>Loading instructions: File format: custom binary</li>
+<li>Case conditions: We = 3000, Re = 5800; We = 8000, Re = 5800; We = 5556, Re = 5800; We = 5556, Re = 3000; We = 5556, Re = 8000;</li>
+<li>Loading instructions: File format: Basilisk native dump. One file per snapshot containing the simulation fields</li>
           </ul>
           </section>
         </div>

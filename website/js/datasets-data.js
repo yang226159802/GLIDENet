@@ -150,7 +150,7 @@ window.DATASETS = [
       "amr"
     ],
     "samples": "185",
-    "grid": "Nx=2048, Ny=2048, Nz=2048 (AMR)",
+    "grid": "Nx=64, Ny=64, Nz=64 (AMR, basic); Nx=2048, Ny=2048, Nz=2048 (AMR, maxlevel)",
     "dimension": "3",
     "phaseCategory": "Two-phase flow",
     "flowRegime": "Turbulent",
