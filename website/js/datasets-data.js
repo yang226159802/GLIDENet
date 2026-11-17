@@ -150,7 +150,7 @@ window.DATASETS = [
       "amr"
     ],
     "samples": "185",
-    "grid": "Nx=64, Ny=64, Nz=64 (AMR, basic); Nx=2048, Ny=2048, Nz=2048 (AMR, maxlevel)",
+    "grid": "AMR: Nx=64, Ny=64, Nz=64 (basic); Nx=2048, Ny=2048, Nz=2048 (maxlevel)",
     "dimension": "3",
     "phaseCategory": "Two-phase flow",
     "flowRegime": "Turbulent",
@@ -160,7 +160,7 @@ window.DATASETS = [
     "license": "Apache License 2.0",
     "size": "125 GB",
     "imageUrl": "assets/turbulent-liquid-jet-atomization-20261028-142102/cover.png",
-    "dataUrl": "https://www.modelscope.cn/datasets/yangqianqi/Turbulent_liquid_jet_atomization_Re_3000_We_5556",
+    "dataUrl": "https://www.modelscope.cn/datasets/yangqianqi/atomisation",
     "detailUrl": "dataset-turbulent-liquid-jet-atomization-20261028-142102.html",
     "caseCount": 5,
     "hostingPlatform": "ModelScope",
