@@ -27,7 +27,7 @@
       <section class="page-intro">
         <div class="container">
           <h1>Atomization of a liquid jet in crossflow</h1>
-          <p>Atomization of a liquid jet in crossflow</p>
+          <p>Three-dimensional two-phase simulation of a liquid jet injected into a perpendicular gas crossflow, under varying Reynolds, Weber numbers, and momentum flux ratios</p>
         </div>
       </section>
 
@@ -43,27 +43,29 @@
           <section class="section">
           <div class="detail-gallery"><img src="assets/atomization-of-a-liquid-jet-in-crossflow-20261028-145501/detail-1.png" alt="Atomization of a liquid jet in crossflow" /></div>
           <h2 id="description">Description</h2>
-          <p>Atomization of a liquid jet in crossflow.</p>
+          <p>This dataset simulates the three-dimensional atomisation of a steady liquid jet injected along the positive x-direction into a perpendicular gas crossflow directed along the negative y-direction. The crossflow deflects the jet and drives interfacial deformation, breakup, and droplet formation. The computational domain measures 3 × 3 × 3, extending from x = 0 to 3 and from -1.5 to 1.5 in both transverse directions. The liquid jet has a radius of 1/12, an initial length of 0.025, and a constant inlet speed of 1. The liquid-to-gas density ratio is 27.84, and the gas enters at y = 1.5 with a speed of approximately 0.5276.
+The simulation uses Basilisk to solve the incompressible two-phase Navier–Stokes equations with surface tension and to track the liquid–gas interface using a volume-of-fluid method. It starts from a 64³ grid and uses adaptive octree refinement up to level 10, with error tolerances of 0.01 for the liquid volume fraction and 0.1 for each velocity component. The source schedules snapshots every 0.05 dimensionless time units from t = 0.05 through 3.8. The available run log ends at approximately t = 3.165.
+The configurations vary the liquid jet Reynolds number (Re), the liquid Weber number (We) and the liquid-to-gas momentum flux ratio (J), enabling comparison of their effects on crossflow-induced breakup and droplet formation.</p>
           </section>
           <section class="section">
           <h2 id="dataset-access">Dataset Access</h2>
           
           </section>
-          <section class="section"><h2 id="cases">Cases</h2><table class="data-table"><thead><tr><th>Dataset link</th><th>info.json</th></tr></thead><tbody><tr><td><a href="https://www.modelscope.cn/my/overview">https://www.modelscope.cn/my/overview</a></td><td><a href="https://www.modelscope.cn/my/overview">info.json</a></td></tr><tr><td><a href="https://www.modelscope.cn/my/overview">https://www.modelscope.cn/my/overview</a></td><td><a href="https://www.modelscope.cn/my/overview">info.json</a></td></tr></tbody></table></section>
+          <section class="section"><h2 id="cases">Cases</h2><table class="data-table"><thead><tr><th>Dataset link</th><th>info.json</th></tr></thead><tbody><tr><td><a href="https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J100_We3000">https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J100_We3000</a></td><td><a href="https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J100_We3000/file/view/master/dataset_infos.json">info.json</a></td></tr><tr><td><a href="https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J30_We3000">https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J30_We3000</a></td><td><a href="https://www.modelscope.cn/datasets/yangqianqi/Atomization_of_a_liquid_jet_in_crossflow_J30_We3000/file/view/master/dataset_infos.json">info.json</a></td></tr></tbody></table></section>
           <section class="section">
           <h2 id="quick-info">Quick Info</h2>
           <ul class="quick-info-list">
             <li>Status: Community dataset</li>
-<li>Paper: N/A <a href="https://doi.org/https://www.modelscope.cn/my/overview">https://www.modelscope.cn/my/overview</a></li>
-<li>Contributors: N/A</li>
+<li>Paper: N/A <a href="https://doi.org/N/A">N/A</a></li>
+<li>Contributors: Qianqi yang</li>
 <li>Contact: 226159802@qq.com</li>
-<li>License: N/A</li>
+<li>License: Apache License 2.0</li>
 <li>Dimension: 3</li>
-<li>Grid: Nx=Ny=Nz=2048</li>
-<li>Field location: N/A</li>
-<li>Format: N/A</li>
+<li>Grid: AMR: Nx=64, Ny=64, Nz=64 (basic); Nx=2048, Ny=2048, Nz=2048 (maxlevel)</li>
+<li>Field location: cell-centered</li>
+<li>Format: custom binary</li>
 <li>Size: 148 GB</li>
-<li>Loading instructions: N/A</li>
+<li>Loading instructions: File format: Basilisk native dump. One file per snapshot containing the simulation fields</li>
           </ul>
           </section>
         </div>
